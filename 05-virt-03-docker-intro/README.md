@@ -13,6 +13,8 @@
 
 ## Задача 3
 После подключения к контейнеру и нажатия комбинации Ctrl-C контейнер был остановлен, потому что Ctrl-C завершило работ основного процесса контейнера.
+
+Скриншоты консоли, где видно все введенные команды и их вывод:
 <img width="1933" height="653" alt="image" src="https://github.com/user-attachments/assets/151add81-475f-4e56-b08b-7a881c4619d1" />
 <img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/1a6cedb3-fbce-4efc-9d02-990ff67ceff0" />
 <img width="1936" height="709" alt="image" src="https://github.com/user-attachments/assets/957fa01c-0d67-46dc-a246-e00884b6b4eb" />
