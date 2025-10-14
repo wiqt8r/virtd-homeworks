@@ -30,35 +30,15 @@
 
 ## Задача 5
 
-1. Создайте отдельную директорию(например /tmp/netology/docker/task5) и 2 файла внутри него.
-"compose.yaml" с содержимым:
+1. При выполнении `docker compose up -d` запускается файл с каноническим именем compose.yaml, при этом docker-compose.yaml игнорируется.
+2. Запустить оба файла можно, добавив в compose.yaml директиву `include`:
 ```
-version: "3"
-services:
-  portainer:
-    network_mode: host
-    image: portainer/portainer-ce:latest
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+include:
+  - docker-compose.yaml
 ```
-"docker-compose.yaml" с содержимым:
-```
-version: "3"
-services:
-  registry:
-    image: registry:2
-
-    ports:
-    - "5000:5000"
-```
-
-И выполните команду "docker compose up -d". Какой из файлов был запущен и почему? (подсказка: https://docs.docker.com/compose/compose-application-model/#the-compose-file )
-
-2. Отредактируйте файл compose.yaml так, чтобы были запущенны оба файла. (подсказка: https://docs.docker.com/compose/compose-file/14-include/)
-
-3. Выполните в консоли вашей хостовой ОС необходимые команды чтобы залить образ custom-nginx как custom-nginx:latest в запущенное вами, локальное registry. Дополнительная документация: https://distribution.github.io/distribution/about/deploying/
-4. Откройте страницу "https://127.0.0.1:9000" и произведите начальную настройку portainer.(логин и пароль адмнистратора)
-5. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local  окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
+4. Выполните в консоли вашей хостовой ОС необходимые команды чтобы залить образ custom-nginx как custom-nginx:latest в запущенное вами, локальное registry. Дополнительная документация: https://distribution.github.io/distribution/about/deploying/
+5. Откройте страницу "https://127.0.0.1:9000" и произведите начальную настройку portainer.(логин и пароль адмнистратора)
+6. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local  окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
 
 ```
 version: '3'
@@ -74,6 +54,13 @@ services:
 7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
+Скриншоты консоли:
+<img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/8d42894c-ef84-4413-8eec-3e0f223909ae" />
+<img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/7d154a7c-8fcb-4c72-96db-60d91a8073aa" />
+
+
+Portainer:
+<img width="1426" height="1366" alt="image" src="https://github.com/user-attachments/assets/061aa3dc-51bc-4ce1-82f7-dc38aa409102" />
 
 ---
 
