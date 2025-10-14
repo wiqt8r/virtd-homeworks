@@ -41,15 +41,15 @@ include:
   - docker-compose.yaml
 ```
 
-После удаления манифеста compose.yaml и выполнения `docker compose up -d` возникло предупреждение `WARN[0000] Found orphan containers`. Docker compose запомнил, что раньше в этом проекте запускался контейнер portainer из файла compose.yaml. Этот файл удалён, но контейнер portainer всё ещё существует. Теперь при запуске Compose видит, что контейнер portainer сделался "orphan", т.е. он не описан ни в одном из существующих yaml-файлов. Удалить не описанные в yaml контейнеры можно при помощи опции `--remove-orphans`
+После удаления манифеста compose.yaml и выполнения `docker compose up -d` возникло предупреждение `WARN[0000] Found orphan containers`. Docker compose запомнил, что раньше в этом проекте запускался контейнер portainer из файла compose.yaml. Этот файл удалён, но контейнер portainer всё ещё существует. Теперь при запуске Compose видит, что контейнер portainer сделался "orphan", т.е. он не описан ни в одном из существующих yaml-файлов. Удалить не описанные в yaml контейнеры можно при помощи опции `--remove-orphans`.
+Также есть WARN с текстом `the attribute version is obsolete`, возникает из-за того, что в yaml есть строка `version: "3"`, которая не требуется для работы актуальной версии Docker Compose. Это не ошибка, а предупреждение, поэтому можно удалить эту строку из yaml-файла, а можно оставить.
 
-В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
 Скриншоты консоли:
 
 <img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/7d154a7c-8fcb-4c72-96db-60d91a8073aa" />
 <img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/8d42894c-ef84-4413-8eec-3e0f223909ae" />
 <img width="1932" height="1084" alt="image" src="https://github.com/user-attachments/assets/9ffcdef2-ec89-4c4a-bd37-9116d623cbac" />
-<img width="1933" height="235" alt="image" src="https://github.com/user-attachments/assets/39321a2a-814c-4bc4-a98d-63907b6a7fea" />
+<img width="1932" height="395" alt="image" src="https://github.com/user-attachments/assets/20d96144-f389-4a00-aec8-e937603ca2e0" />
 
 compose.yaml
 
@@ -61,8 +61,6 @@ Portainer:
 
 ---
 
-### Правила приема
 
-Домашнее задание выполните в файле readme.md в GitHub-репозитории. В личном кабинете отправьте на проверку ссылку на .md-файл в вашем репозитории.
 
 
