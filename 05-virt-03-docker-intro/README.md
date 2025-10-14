@@ -55,9 +55,11 @@ services:
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
 Скриншоты консоли:
-<img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/8d42894c-ef84-4413-8eec-3e0f223909ae" />
 <img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/7d154a7c-8fcb-4c72-96db-60d91a8073aa" />
+<img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/8d42894c-ef84-4413-8eec-3e0f223909ae" />
 
+compose.yaml
+<img width="641" height="400" alt="image" src="https://github.com/user-attachments/assets/05f686d2-39ff-4b2f-900e-21601bccb402" />
 
 Portainer:
 <img width="1426" height="1366" alt="image" src="https://github.com/user-attachments/assets/061aa3dc-51bc-4ce1-82f7-dc38aa409102" />
