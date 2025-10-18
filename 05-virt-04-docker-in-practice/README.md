@@ -13,43 +13,31 @@
 ---
 
 ## Задача 0
-1. Убедитесь что у вас НЕ(!) установлен ```docker-compose```, для этого получите следующую ошибку от команды ```docker-compose --version```
-```
-Command 'docker-compose' not found, but can be installed with:
+<img width="969" height="133" alt="image" src="https://github.com/user-attachments/assets/69d8b1df-d93c-4a4b-9126-343b4364870d" />
 
-sudo snap install docker          # version 24.0.5, or
-sudo apt  install docker-compose  # version 1.25.0-1
-
-See 'snap info docker' for additional versions.
-```
-В случае наличия установленного в системе ```docker-compose``` - удалите его.  
-2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```  
-###  **Своё решение к задачам оформите в вашем GitHub репозитории!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**
 
 ---
 
 ## Задача 1
-1. Сделайте в своем GitHub пространстве fork [репозитория](https://github.com/netology-code/shvirtd-example-python).
+Dockerfile.python
+<img width="955" height="421" alt="image" src="https://github.com/user-attachments/assets/a4670c16-0137-44eb-841c-a4b3f7cb5ef7" />
+.dockerignore
+<img width="346" height="360" alt="image" src="https://github.com/user-attachments/assets/88546bd5-226a-4d6c-a5eb-86723f203110" />
+Задачи поднять MySQL на этом этапе не было, контейнер работает, из браузера достуапен
+<img width="1066" height="154" alt="image" src="https://github.com/user-attachments/assets/bfeb7bc5-8692-4ed5-91a4-4e4be664ee36" />
 
-2. Создайте файл ```Dockerfile.python``` на основе существующего `Dockerfile`:
-   - Используйте базовый образ ```python:3.12-slim```
-   - Обязательно используйте конструкцию ```COPY . .``` в Dockerfile
-   - Создайте `.dockerignore` файл для исключения ненужных файлов
-   - Используйте ```CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]``` для запуска
-   - Протестируйте корректность сборки 
-3. (Необязательная часть, *) Изучите инструкцию в проекте и запустите web-приложение без использования docker, с помощью venv. (Mysql БД можно запустить в docker run).
-4. (Необязательная часть, *) Изучите код приложения и добавьте управление названием таблицы через ENV переменную.
----
-### ВНИМАНИЕ!
-!!! В процессе последующего выполнения ДЗ НЕ изменяйте содержимое файлов в fork-репозитории! Ваша задача ДОБАВИТЬ 5 файлов: ```Dockerfile.python```, ```compose.yaml```, ```.gitignore```, ```.dockerignore```,```bash-скрипт```. Если вам понадобилось внести иные изменения в проект - вы что-то делаете неверно!
+(*)Web-приложение без использования docker, с помощью venv. (Mysql в контейнере)
+<img width="1297" height="231" alt="image" src="https://github.com/user-attachments/assets/a27a48d1-0b36-49a2-bffd-79c39e8f0525" />
+
 ---
 
 ## Задача 2 (*)
-1. Создайте в yandex cloud container registry с именем "test" с помощью "yc tool" . [Инструкция](https://cloud.yandex.ru/ru/docs/container-registry/quickstart/?from=int-console-help)
-2. Настройте аутентификацию вашего локального docker в yandex container registry.
-3. Соберите и залейте в него образ с python приложением из задания №1.
-4. Просканируйте образ на уязвимости.
-5. В качестве ответа приложите отчет сканирования.
+Результат сканирования в убунту:
+<img width="1791" height="313" alt="image" src="https://github.com/user-attachments/assets/9d496a52-f9b4-4fd9-819e-9cf6a482c05a" />
+И в интерфейсе Яндекс клауда:
+<img width="1323" height="814" alt="image" src="https://github.com/user-attachments/assets/1eae0174-9ed9-4497-852d-527214020700" />
+
+
 
 ## Задача 3
 1. Изучите файл "proxy.yaml"
