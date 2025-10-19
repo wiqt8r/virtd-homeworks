@@ -126,12 +126,21 @@ TABLE_NAME=requests
 
 
 ## Задача 4
-1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
-2. Подключитесь к Вм по ssh и установите docker.
-3. Напишите bash-скрипт, который скачает ваш fork-репозиторий в каталог /opt и запустит проект целиком.
-4. Зайдите на сайт проверки http подключений, например(или аналогичный): ```https://check-host.net/check-http``` и запустите проверку вашего сервиса ```http://<внешний_IP-адрес_вашей_ВМ>:8090```. Таким образом трафик будет направлен в ingress-proxy. Трафик должен пройти через цепочки: Пользователь → Internet → Nginx → HAProxy → FastAPI(запись в БД) → HAProxy → Nginx → Internet → Пользователь
-5. (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения ```docker ps -a```
-6. Повторите SQL-запрос на сервере и приложите скриншот и ссылку на fork.
+Bash-скрипт в репозитории: [****](https://github.com/wiqt8r/shvirtd-example-python/blob/main/netology_test.sh)
+
+Проверка сервиса на check-host:
+
+<img width="1054" height="1113" alt="image" src="https://github.com/user-attachments/assets/55181de9-10a1-4344-8e35-5aca377e2e85" />
+
+Настроен remote ssh context к новому серверу:
+
+<img width="1931" height="470" alt="image" src="https://github.com/user-attachments/assets/01ba8a96-646f-4e37-8e80-7847ad733f4e" />
+
+SQL-запрос:
+
+<img width="954" height="871" alt="image" src="https://github.com/user-attachments/assets/e13c3fa2-ae0c-4235-bc2a-ee033c1da784" />
+
+Ссылка на fork: https://github.com/wiqt8r/shvirtd-example-python/tree/main
 
 ## Задача 5 (*)
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
