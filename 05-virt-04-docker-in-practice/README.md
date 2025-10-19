@@ -13,28 +13,39 @@
 ---
 
 ## Задача 0
+
 <img width="969" height="133" alt="image" src="https://github.com/user-attachments/assets/69d8b1df-d93c-4a4b-9126-343b4364870d" />
 
 
 ---
 
 ## Задача 1
-Dockerfile.python
+
+Dockerfile.python:
+
 <img width="955" height="421" alt="image" src="https://github.com/user-attachments/assets/a4670c16-0137-44eb-841c-a4b3f7cb5ef7" />
-.dockerignore
+
+.dockerignore:
+
 <img width="346" height="360" alt="image" src="https://github.com/user-attachments/assets/88546bd5-226a-4d6c-a5eb-86723f203110" />
-Задачи поднять MySQL на этом этапе не было, контейнер работает, из браузера достуапен
+
+Задачи поднять MySQL на этом этапе не было, контейнер работает, из браузера достуапен:
+
 <img width="1066" height="154" alt="image" src="https://github.com/user-attachments/assets/bfeb7bc5-8692-4ed5-91a4-4e4be664ee36" />
 
-(*)Web-приложение без использования docker, с помощью venv. (Mysql в контейнере)
+(*)Web-приложение без использования docker, с помощью venv. (Mysql в контейнере):
+
 <img width="1297" height="231" alt="image" src="https://github.com/user-attachments/assets/a27a48d1-0b36-49a2-bffd-79c39e8f0525" />
 
 ---
 
 ## Задача 2 (*)
 Результат сканирования в убунту:
+
 <img width="1791" height="313" alt="image" src="https://github.com/user-attachments/assets/9d496a52-f9b4-4fd9-819e-9cf6a482c05a" />
+
 И в интерфейсе Яндекс клауда:
+
 <img width="1323" height="814" alt="image" src="https://github.com/user-attachments/assets/1eae0174-9ed9-4497-852d-527214020700" />
 
 
