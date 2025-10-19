@@ -126,7 +126,7 @@ TABLE_NAME=requests
 
 
 ## Задача 4
-Bash-скрипт в репозитории: [****](https://github.com/wiqt8r/shvirtd-example-python/blob/main/netology_test.sh)
+Bash-скрипт в репозитории: https://github.com/wiqt8r/shvirtd-example-python/blob/main/netology_test.sh
 
 Проверка сервиса на check-host:
 
@@ -140,7 +140,8 @@ SQL-запрос:
 
 <img width="954" height="871" alt="image" src="https://github.com/user-attachments/assets/e13c3fa2-ae0c-4235-bc2a-ee033c1da784" />
 
-Ссылка на fork: https://github.com/wiqt8r/shvirtd-example-python/tree/main
+
+**Ссылка на fork:** https://github.com/wiqt8r/shvirtd-example-python/tree/main
 
 ## Задача 5 (*)
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
