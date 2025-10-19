@@ -51,20 +51,79 @@ Dockerfile.python:
 
 
 ## Задача 3
-1. Изучите файл "proxy.yaml"
-2. Создайте в репозитории с проектом файл ```compose.yaml```. С помощью директивы "include" подключите к нему файл "proxy.yaml".
-3. Опишите в файле ```compose.yaml``` следующие сервисы: 
 
-- ```web```. Образ приложения должен ИЛИ собираться при запуске compose из файла ```Dockerfile.python``` ИЛИ скачиваться из yandex cloud container registry(из задание №2 со *). Контейнер должен работать в bridge-сети с названием ```backend``` и иметь фиксированный ipv4-адрес ```172.20.0.5```. Сервис должен всегда перезапускаться в случае ошибок.
-Передайте необходимые ENV-переменные для подключения к Mysql базе данных по сетевому имени сервиса ```web``` 
+Содержимое compose.yaml (пришлось добавить healthcheck в контейнере db и задержку при старте веба, иначе таблица не успевала создаваться, и веб ругался, что Table 'virtd.requests' doesn't exist):
+```
+include:
+  - proxy.yaml
 
-- ```db```. image=mysql:8. Контейнер должен работать в bridge-сети с названием ```backend``` и иметь фиксированный ipv4-адрес ```172.20.0.10```. Явно перезапуск сервиса в случае ошибок. Передайте необходимые ENV-переменные для создания: пароля root пользователя, создания базы данных, пользователя и пароля для web-приложения.Обязательно используйте уже существующий .env file для назначения секретных ENV-переменных!
+services:
+  db:
+    image: mysql:8
+    container_name: mysql-container
+    restart: always
+    env_file:
+      - .env
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u${MYSQL_USER}", "-p${MYSQL_PASSWORD}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
 
-2. Запустите проект локально с помощью docker compose , добейтесь его стабильной работы: команда ```curl -L http://127.0.0.1:8090``` должна возвращать в качестве ответа время и локальный IP-адрес. Если сервисы не стартуют воспользуйтесь командами: ```docker ps -a ``` и ```docker logs <container_name>``` . Если вместо IP-адреса вы получаете информационную ошибку --убедитесь, что вы шлете запрос на порт ```8090```, а не 5000.
+  web:
+    image: cr.yandex/crpvp46miuir2eoc750g/my-python-app:v1
+    container_name: web
+    restart: always
+    env_file:
+      - .env
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "sleep 15 && uvicorn main:app --host 0.0.0.0 --port 5000"
 
-5. Подключитесь к БД mysql с помощью команды ```docker exec -ti <имя_контейнера> mysql -uroot -p<пароль root-пользователя>```(обратите внимание что между ключем -u и логином root нет пробела. это важно!!! тоже самое с паролем) . Введите последовательно команды (не забываем в конце символ ; ): ```show databases; use <имя вашей базы данных(по-умолчанию example)>; show tables; SELECT * from requests LIMIT 10;```.
+volumes:
+  mysql_data:
 
-6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+```
+файл .env
+```
+# Для main.py
+DB_HOST=db
+DB_PORT=3306
+DB_USER=app
+DB_PASSWORD=xxxx
+DB_NAME=virtd
+TABLE_NAME=requests
+
+# Для MySQL
+MYSQL_ROOT_PASSWORD=xxxx
+MYSQL_HOST=db
+MYSQL_PORT=3306
+MYSQL_USER=app
+MYSQL_PASSWORD=xxxx
+MYSQL_DATABASE=virtd
+TABLE_NAME=requests
+```
+
+Скриншот из БД:
+<img width="1006" height="1291" alt="image" src="https://github.com/user-attachments/assets/c7267fb9-e95b-4dff-abfa-860b8cacdee2" />
+
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
