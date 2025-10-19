@@ -160,18 +160,31 @@ SQL-запрос:
 ## Задача 6
 Скриншот из Dive:
 
-<img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/fbea4f60-63a8-491e-aadb-573200f3b4fc" />
+<img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/f0769827-7d9e-415a-8302-0b0e5ac83727" />
+
+Извлеченный terraform:
+
+<img width="1933" height="1090" alt="image" src="https://github.com/user-attachments/assets/f0b85b11-613e-44ea-8ea8-e416957eb95e" />
 
 
 
 ## Задача 6.1
-Добейтесь аналогичного результата, используя docker cp.  
-Предоставьте скриншоты  действий .
+Через docker cp:
+
+<img width="1932" height="627" alt="image" src="https://github.com/user-attachments/assets/bbb94ae6-8342-4f7b-a9f0-cad7e042c53c" />
+
 
 ## Задача 6.2 (**)
-Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
-Предоставьте скриншоты  действий .
+
+Докерфайл:
+
+<img width="537" height="132" alt="image" src="https://github.com/user-attachments/assets/0120133e-8461-4047-aaca-1ff57578525e" />
+
+Процесс извлечения
+
+<img width="1932" height="712" alt="image" src="https://github.com/user-attachments/assets/d00bba66-ac23-4e22-82f9-b0ecd49b7211" />
+
 
 ## Задача 7 (***)
-Запустите ваше python-приложение с помощью runC, не используя docker или containerd.  
-Предоставьте скриншоты  действий .
+*Запустите ваше python-приложение с помощью runC, не используя docker или containerd.*
+*Предоставьте скриншоты  действий .*
