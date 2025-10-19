@@ -144,10 +144,18 @@ SQL-запрос:
 **Ссылка на fork:** https://github.com/wiqt8r/shvirtd-example-python/tree/main
 
 ## Задача 5 (*)
-1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
-2. Протестируйте ручной запуск
-3. Настройте выполнение скрипта раз в 1 минуту через cron, crontab или systemctl timer. Придумайте способ не светить логин/пароль в git!!
-4. Предоставьте скрипт, cron-task и скриншот с несколькими резервными копиями в "/opt/backup"
+Скрипт бэкапа MySQL: https://github.com/wiqt8r/shvirtd-example-python/blob/main/db_backup.sh
+
+Задача в кронтабе:
+
+```
+* * * * * /opt/shvirtd-example-python/db_backup.sh >> /var/log/db_backup.log 2>&1
+```
+
+Бэкапы на сервере:
+
+<img width="1683" height="139" alt="image" src="https://github.com/user-attachments/assets/487fee34-508e-4688-9b31-8e5797c04919" />
+
 
 ## Задача 6
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
