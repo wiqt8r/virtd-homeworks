@@ -158,8 +158,11 @@ SQL-запрос:
 
 
 ## Задача 6
-Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
-Предоставьте скриншоты  действий .
+Скриншот из Dive:
+
+<img width="1955" height="1294" alt="image" src="https://github.com/user-attachments/assets/fbea4f60-63a8-491e-aadb-573200f3b4fc" />
+
+
 
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
