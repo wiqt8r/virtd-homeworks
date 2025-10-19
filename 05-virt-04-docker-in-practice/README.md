@@ -128,6 +128,8 @@ TABLE_NAME=requests
 ## Задача 4
 Bash-скрипт в репозитории: https://github.com/wiqt8r/shvirtd-example-python/blob/main/netology_test.sh
 
+**Ссылка на fork:** https://github.com/wiqt8r/shvirtd-example-python/tree/main
+
 Проверка сервиса на check-host:
 
 <img width="1054" height="1113" alt="image" src="https://github.com/user-attachments/assets/55181de9-10a1-4344-8e35-5aca377e2e85" />
@@ -141,7 +143,6 @@ SQL-запрос:
 <img width="954" height="871" alt="image" src="https://github.com/user-attachments/assets/e13c3fa2-ae0c-4235-bc2a-ee033c1da784" />
 
 
-**Ссылка на fork:** https://github.com/wiqt8r/shvirtd-example-python/tree/main
 
 ## Задача 5 (*)
 Скрипт бэкапа MySQL: https://github.com/wiqt8r/shvirtd-example-python/blob/main/db_backup.sh
